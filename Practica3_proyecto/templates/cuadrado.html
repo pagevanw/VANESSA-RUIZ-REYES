@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuadrado</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+
+<body>
+
+    <header class="encabezado">
+
+        <h1>Cuadrado</h1>
+
+        <nav class="menu">
+            <a href="/">Cuadrado</a>
+        </nav>
+
+    </header>
+
+    <main class="contenedor">
+
+        <section class="tarjeta-operacion">
+
+            <h2>Área y perímetro de un cuadrado</h2>
+
+            <form method="POST" action="/calcular">
+
+                <label>Lado:</label>
+                <input type="number" name="lado" required>
+
+                <br><br>
+
+                <button type="submit">Calcular</button>
+
+            </form>
+
+            {% if area %}
+                <p>El área es: {{ area }}</p>
+            {% endif %}
+
+            {% if perimetro %}
+                <p>El perímetro es: {{ perimetro }}</p>
+            {% endif %}
+
+        </section>
+
+    </main>
+
+</body>
+</html>
